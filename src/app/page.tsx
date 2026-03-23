@@ -1,66 +1,44 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Container, Title, Text, Anchor, Stack, Group } from "@mantine/core";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+    <Container size="sm" py="xl">
+      <Stack gap="lg">
+        <Title order={1} fz={48}>
+          Hi, I&apos;m Mo
+        </Title>
+        <Text fz="lg" lh={1.8}>
+          I&apos;m a cofounder of an insurtech startup. Previously, I was a
+          software engineer at Airbnb where I worked on an internal CMS tool.
+        </Text>
+        <Text fz="lg" lh={1.8}>
+          Outside of work, I enjoy playing soccer, eating out, hanging out with
+          friends, and building side projects.
+        </Text>
+        <Group gap="md">
+          <Anchor
+            href="https://twitter.com/mofromyyz"
             target="_blank"
-            rel="noopener noreferrer"
+            fz="lg"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            Twitter
+          </Anchor>
+          <Anchor
+            href="https://github.com/mofromyyz"
             target="_blank"
-            rel="noopener noreferrer"
+            fz="lg"
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            GitHub
+          </Anchor>
+          <Anchor
+            href="https://instagram.com/mofromyyz"
+            target="_blank"
+            fz="lg"
+          >
+            Instagram
+          </Anchor>
+        </Group>
+      </Stack>
+    </Container>
   );
 }
