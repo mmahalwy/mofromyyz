@@ -11,6 +11,7 @@ import {
   createTheme,
 } from "@mantine/core";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import Link from "next/link";
 
 const theme = createTheme({
   colors: {
@@ -70,10 +71,10 @@ function Header() {
   return (
     <Container size="sm" py="md">
       <Group justify="flex-end" gap="md" wrap="wrap">
-        <Anchor href="/" c="dimmed" underline="never" fz="sm">
+        <Anchor component={Link} href="/" c="dimmed" underline="never" fz="sm">
           Home
         </Anchor>
-        <Anchor href="/blog" c="dimmed" underline="never" fz="sm">
+        <Anchor component={Link} href="/blog" c="dimmed" underline="never" fz="sm">
           Blog
         </Anchor>
         <Anchor
@@ -86,7 +87,7 @@ function Header() {
           Twitter
         </Anchor>
         <Anchor
-          href="https://github.com/mofromyyz"
+          href="https://github.com/mmahalwy"
           c="dimmed"
           underline="never"
           fz="sm"

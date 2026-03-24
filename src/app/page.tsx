@@ -12,7 +12,7 @@ export default function Home() {
           software engineer at Airbnb where I worked on an internal CMS tool.
         </Text>
         <Text fz="lg" lh={1.8}>
-          Outside of work, I enjoy playing soccer, eating out, hanging out with
+          Outside of work, I enjoy playing padel and pickleball, eating out, hanging out with
           friends, and building side projects.
         </Text>
         <Group gap="md">
@@ -24,7 +24,7 @@ export default function Home() {
             Twitter
           </Anchor>
           <Anchor
-            href="https://github.com/mofromyyz"
+            href="https://github.com/mmahalwy"
             target="_blank"
             fz="lg"
           >

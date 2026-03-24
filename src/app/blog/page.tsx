@@ -1,4 +1,5 @@
 import { Container, Title, Text, Stack, Anchor, Group, Badge } from "@mantine/core";
+import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function BlogIndex() {
       <Stack gap="xl">
         {posts.map((post) => (
           <Anchor
+            component={Link}
             key={post.slug}
             href={`/blog/${post.slug}`}
             underline="never"
@@ -23,7 +25,7 @@ export default function BlogIndex() {
           >
             <Stack gap={4}>
               <Group gap="sm">
-                <Title order={3} c="white">
+                <Title order={3}>
                   {post.title}
                 </Title>
                 {post.category && (
