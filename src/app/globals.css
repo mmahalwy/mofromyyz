@@ -110,6 +110,41 @@ body {
   margin: 2rem 0;
 }
 
+/* Tables */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.blog-content th,
+.blog-content td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border: 1px solid var(--mantine-color-default-border);
+}
+
+.blog-content th {
+  font-weight: 600;
+}
+
+[data-mantine-color-scheme="dark"] .blog-content th {
+  background: #1a1a1a;
+}
+
+[data-mantine-color-scheme="light"] .blog-content th {
+  background: #f1f3f5;
+}
+
+/* Images */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
 /* ===== Syntax Highlighting - Dark (GitHub Dark) ===== */
 [data-mantine-color-scheme="dark"] .hljs {
   color: #e6edf3;
