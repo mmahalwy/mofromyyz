@@ -4,7 +4,10 @@ date: "2026-03-24"
 description: "After four years of building, we just closed our Series B. Here's what we're building, why it matters, and what I've learned as CTO."
 readTime: "8 min read"
 category: "Startups"
+image: "/blog/shepherd-series-b.jpeg"
 ---
+
+![Shepherd Series B — $42M led by Intact Private Capital, Spark Capital, and Costanoa](/blog/shepherd-series-b.jpeg)
 
 Today we announced Shepherd's $42M Series B. I want to use this post to share some personal reflections on what we've built, what I've learned, and where we're going — less of the polished company narrative, more of what it actually feels like to be in the middle of it.
 

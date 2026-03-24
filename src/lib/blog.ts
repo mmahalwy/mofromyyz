@@ -62,6 +62,7 @@ export async function getPostBySlug(slug: string) {
     description: data.description as string,
     readTime: (data.readTime as string) || "3 min read",
     category: data.category as string | undefined,
+    image: (data.image as string) || null,
     contentHtml,
   };
 }

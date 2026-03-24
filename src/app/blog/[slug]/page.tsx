@@ -14,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  return {
+  const metadata: Metadata = {
     title: post.title,
     description: post.description,
     openGraph: {
@@ -33,6 +33,14 @@ export async function generateMetadata({
       creator: "@mofromyyz",
     },
   };
+
+  if (post.image) {
+    const imageUrl = `https://mofromyyz.com${post.image}`;
+    metadata.openGraph!.images = [{ url: imageUrl, width: 1200, height: 630 }];
+    metadata.twitter!.images = [imageUrl];
+  }
+
+  return metadata;
 }
 
 function BlogJsonLd({ post }: { post: { title: string; description: string; date: string; slug: string } }) {
