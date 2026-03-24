@@ -24,11 +24,13 @@ export async function generateMetadata({
       publishedTime: post.date,
       authors: ["Mohamed El Mahallawy"],
       url: `https://mofromyyz.com/blog/${slug}`,
+      siteName: "Mo from YYZ",
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      creator: "@mofromyyz",
     },
   };
 }
