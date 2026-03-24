@@ -2,16 +2,8 @@ import "@mantine/core/styles.css";
 import "@mantine/code-highlight/styles.css";
 import "./globals.css";
 import type { Metadata } from "next";
-import {
-  MantineProvider,
-  ColorSchemeScript,
-  Container,
-  Group,
-  Anchor,
-  createTheme,
-} from "@mantine/core";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import Link from "next/link";
+import { MantineProvider, ColorSchemeScript, createTheme } from "@mantine/core";
+import { Header } from "@/components/Header";
 
 const theme = createTheme({
   colors: {
@@ -66,49 +58,6 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
-
-function Header() {
-  return (
-    <Container size="sm" py="md">
-      <Group justify="flex-end" gap="md" wrap="wrap">
-        <Anchor component={Link} href="/" c="dimmed" underline="never" fz="sm">
-          Home
-        </Anchor>
-        <Anchor component={Link} href="/blog" c="dimmed" underline="never" fz="sm">
-          Blog
-        </Anchor>
-        <Anchor
-          href="https://twitter.com/mofromyyz"
-          c="dimmed"
-          underline="never"
-          fz="sm"
-          target="_blank"
-        >
-          Twitter
-        </Anchor>
-        <Anchor
-          href="https://github.com/mmahalwy"
-          c="dimmed"
-          underline="never"
-          fz="sm"
-          target="_blank"
-        >
-          GitHub
-        </Anchor>
-        <Anchor
-          href="https://instagram.com/mofromyyz"
-          c="dimmed"
-          underline="never"
-          fz="sm"
-          target="_blank"
-        >
-          Instagram
-        </Anchor>
-        <ThemeToggle />
-      </Group>
-    </Container>
-  );
-}
 
 export default function RootLayout({
   children,

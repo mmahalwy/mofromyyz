@@ -1,5 +1,4 @@
 import { Container, Title, Text, Anchor } from "@mantine/core";
-import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import type { Metadata } from "next";
 
@@ -78,7 +77,7 @@ export default async function BlogPost({
     <>
       <BlogJsonLd post={post} />
       <Container size="sm" py="xl">
-        <Anchor component={Link} href="/blog" c="dimmed" fz="sm" mb="md" display="block">
+        <Anchor href="/blog" c="dimmed" fz="sm" mb="md" display="block">
           &larr; Back to blog
         </Anchor>
         <Title order={1} mb="xs">
