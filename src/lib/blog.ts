@@ -16,6 +16,7 @@ export type PostMeta = {
   description: string;
   readTime: string;
   category?: string;
+  draft?: boolean;
 };
 
 export function getAllPosts(): PostMeta[] {
@@ -34,9 +35,14 @@ export function getAllPosts(): PostMeta[] {
         description: data.description,
         readTime: data.readTime || "3 min read",
         category: data.category,
+        draft: data.draft || false,
       } as PostMeta;
     });
-  return posts.sort(
+
+  const isProduction = process.env.NODE_ENV === "production";
+  const filtered = isProduction ? posts.filter((p) => !p.draft) : posts;
+
+  return filtered.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }
@@ -55,6 +61,11 @@ export async function getPostBySlug(slug: string) {
 
   const contentHtml = result.toString();
 
+  const isDraft = data.draft || false;
+  if (isDraft && process.env.NODE_ENV === "production") {
+    throw new Error("Post not found");
+  }
+
   return {
     slug,
     title: data.title as string,
@@ -63,6 +74,7 @@ export async function getPostBySlug(slug: string) {
     readTime: (data.readTime as string) || "3 min read",
     category: data.category as string | undefined,
     image: (data.image as string) || null,
+    draft: isDraft,
     contentHtml,
   };
 }

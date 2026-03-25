@@ -1,4 +1,4 @@
-import { Container, Title, Text, Anchor } from "@mantine/core";
+import { Container, Title, Text, Anchor, Badge, Group } from "@mantine/core";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import type { Metadata } from "next";
 
@@ -90,9 +90,16 @@ export default async function BlogPost({
         <Anchor href="/blog" c="dimmed" fz="sm" mb="md" display="block">
           &larr; Back to blog
         </Anchor>
-        <Title order={1} mb="xs">
-          {post.title}
-        </Title>
+        <Group gap="sm" mb="xs" align="center">
+          <Title order={1}>
+            {post.title}
+          </Title>
+          {post.draft && (
+            <Badge size="lg" variant="light" color="yellow">
+              Draft
+            </Badge>
+          )}
+        </Group>
         <Text c="dimmed" fz="sm" mb="xl">
           {new Date(post.date).toLocaleDateString("en-US", {
             year: "numeric",

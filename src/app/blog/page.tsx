@@ -26,6 +26,11 @@ export default function BlogIndex() {
                 <Title order={3}>
                   {post.title}
                 </Title>
+                {post.draft && (
+                  <Badge size="sm" variant="light" color="yellow">
+                    Draft
+                  </Badge>
+                )}
                 {post.category && (
                   <Badge size="sm" variant="light">
                     {post.category}
