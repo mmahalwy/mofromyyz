@@ -36,12 +36,11 @@ export default function BlogIndex() {
                     {post.category}
                   </Badge>
                 )}
-                <Text c="dimmed" fz="sm">
-                  {formatDate(post.date)}{" "}
-                  &middot; {post.readTime}
-                </Text>
               </Group>
               <Text c="dimmed">{post.description}</Text>
+              <Text c="dimmed" fz="sm">
+                {formatDate(post.date)} &middot; {post.readTime}
+              </Text>
             </Stack>
           </Anchor>
         ))}

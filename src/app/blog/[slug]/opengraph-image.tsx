@@ -23,7 +23,7 @@ export default async function OgImage({
           flexDirection: "column",
           justifyContent: "center",
           padding: "60px 80px",
-          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
+          background: "#111111",
           fontFamily: "system-ui, sans-serif",
         }}
       >
