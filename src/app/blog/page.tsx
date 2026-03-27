@@ -1,5 +1,5 @@
 import { Container, Title, Text, Stack, Anchor, Group, Badge } from "@mantine/core";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, formatDate } from "@/lib/blog";
 
 export const metadata = {
   title: "Blog | Mo from YYZ",
@@ -22,10 +22,10 @@ export default function BlogIndex() {
             c="inherit"
           >
             <Stack gap={4}>
-              <Group gap="sm">
-                <Title order={3}>
-                  {post.title}
-                </Title>
+              <Title order={3}>
+                {post.title}
+              </Title>
+              <Group gap="xs">
                 {post.draft && (
                   <Badge size="sm" variant="light" color="yellow">
                     Draft
@@ -36,15 +36,11 @@ export default function BlogIndex() {
                     {post.category}
                   </Badge>
                 )}
+                <Text c="dimmed" fz="sm">
+                  {formatDate(post.date)}{" "}
+                  &middot; {post.readTime}
+                </Text>
               </Group>
-              <Text c="dimmed" fz="sm">
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}{" "}
-                &middot; {post.readTime}
-              </Text>
               <Text c="dimmed">{post.description}</Text>
             </Stack>
           </Anchor>

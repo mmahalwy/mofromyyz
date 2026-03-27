@@ -86,7 +86,7 @@ export default async function OgImage({
               display: "flex",
             }}
           >
-            {new Date(post.date).toLocaleDateString("en-US", {
+            {new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
               day: "numeric",

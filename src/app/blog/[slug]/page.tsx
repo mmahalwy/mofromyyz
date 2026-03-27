@@ -1,5 +1,5 @@
 import { Container, Title, Text, Anchor, Badge, Group } from "@mantine/core";
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -101,11 +101,7 @@ export default async function BlogPost({
           )}
         </Group>
         <Text c="dimmed" fz="sm" mb="xl">
-          {new Date(post.date).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}{" "}
+          {formatDate(post.date)}{" "}
           &middot; {post.readTime}
         </Text>
         <div
