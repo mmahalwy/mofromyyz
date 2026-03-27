@@ -4,7 +4,7 @@ date: "2026-03-25"
 description: "Three types of engineers are emerging in the AI era. Only one has realized the job itself has changed. The difference isn't tooling — it's mindset."
 readTime: "6 min read"
 category: "Engineering"
-draft: true
+draft: false
 ---
 
 There are three types of engineers emerging right now. The difference between them isn't how much they use AI — it's how they think about it.
